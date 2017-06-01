@@ -65,3 +65,7 @@ typings/
 .env
 env.dev
 env.prod
+config.ts
+
+# vscode hidden files
+.vscode
