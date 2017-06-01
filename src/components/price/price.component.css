@@ -1,0 +1,67 @@
+.price-container {
+  width: 20rem;
+  padding: .5rem 1rem .5rem 1rem;
+  border: .3rem solid black;
+  border-radius: 1rem;
+  float: left;
+  margin: 1rem;
+}
+.price-container:hover {
+  border: .3rem solid red;
+}
+
+.price-left-container {
+  float: left;
+}
+
+.price-right-container {
+  float: right;
+}
+
+.symbol {
+  float: left;
+}
+
+.price-close {
+  font-size: 350%;
+  text-align: left;
+  margin: 0;
+}
+
+.price-open {
+  float: left;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+  max-width: 10rem;
+  text-align: center;
+}
+.price-open label {
+  color: blue;
+}
+
+
+.price-high {
+  text-align: center;
+  max-width: 10rem;
+  margin-top: 2rem;
+}
+.price-high label {
+  color: green;
+}
+
+.price-low {
+  text-align: center;
+  max-width: 10rem;
+}
+.price-low label {
+  color: red;
+}
+
+.price-volume {
+  clear: both;
+  text-align: center;
+  padding-top: .5rem;
+}
+.price-volume label {
+  color: grey;
+}

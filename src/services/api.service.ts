@@ -8,6 +8,8 @@ import 'rxjs/add/observable/throw';
 
 import { ENV } from '../app/config';
 
+import { Price } from './../classes/price';
+
 const base_url = 'https://www.quandl.com/api/v3/datasets/';
 const key_arg = 'api_key=' + ENV.QUANDL_API_KEY;
 
@@ -46,13 +48,13 @@ export class APIService {
   }
 
   // gets the latest closing price (so the latest available price)
-  getPrice(symbol: string): Promise<number> {
-    const promise = new Promise<number>((resolve, reject) => {
-      this.makeCall('WIKI', symbol).subscribe(function (data) {
-        const innerData = data['dataset']['data'];
-        const last = innerData[0];
+  getPrice(symbol: string): Promise<Price> {
+    const promise = new Promise<Price>((resolve, reject) => {
+      this.makeCall('WIKI', symbol, {limit: 1}).subscribe(function (data) {
+        const price = new Price;
+        price.extractPrice(data);
 
-        resolve(last[4]);
+        resolve(price);
       }, reject);
     });
 

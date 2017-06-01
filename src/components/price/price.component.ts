@@ -5,6 +5,8 @@ import 'rxjs/add/operator/switchMap';
 
 import { APIService } from './../../services/api.service';
 
+import { Price } from './../../classes/price';
+
 @Component({
   selector: 'price',
   templateUrl: './price.component.html',
@@ -14,7 +16,7 @@ import { APIService } from './../../services/api.service';
 export class PriceComponent implements OnInit {
   @Input() symbol: string;
 
-  price: number;
+  price: Price;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,8 +24,10 @@ export class PriceComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params
-      .subscribe(params => this.symbol = params['symbol'].toString());
+    if (!this.symbol) {
+      this.route.params
+        .subscribe(params => this.symbol = params['symbol'].toString());
+    }
 
     this.api.getPrice(this.symbol).then((price) => this.price = price);
   }

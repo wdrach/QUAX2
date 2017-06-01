@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginCallbackComponent } from './../components/login/login-callback.component';
 import { PriceComponent } from './../components/price/price.component';
+import { ListComponent } from './../components/list/list.component';
 
 import { APIService } from './../services/api.service';
 
@@ -15,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     LoginCallbackComponent,
-    PriceComponent
+    PriceComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

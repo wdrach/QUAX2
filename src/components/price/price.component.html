@@ -1,1 +1,12 @@
-<h1> {{price}} </h1>
+<div *ngIf="price" class="price-container">
+  <div class="price-left-container">
+    <h1 class="symbol"> {{symbol}} </h1>
+    <p class="price-open"> {{price.open | number}} <br> <label>Open Price</label></p>
+    <p class="price-close"> {{price.close | number}} </p>
+  </div>
+  <div class="price-right-container">
+    <p class="price-high"> {{price.high | number}} <br> <label>High Price</label></p>
+    <p class="price-low"> {{price.low | number}} <br> <label>Low Price</label></p>
+  </div>
+  <p class="price-volume"> <label>Trade Volume:</label> {{price.volume | number}} </p>
+</div>
